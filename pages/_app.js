@@ -1,7 +1,19 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
+import { ThemeProvider } from 'next-themes';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const MyApp = ({ Component, pageProps }) => (
+  <ThemeProvider attribute="class">
+    <div className="dark:bg-nft-dark
+    bg-white min-h-screen"
+    >
+      <Navbar />
+      <Component {...pageProps} />;
+      <Footer />
+    </div>
+  </ThemeProvider>
 
-export default MyApp
+);
+
+export default MyApp;
